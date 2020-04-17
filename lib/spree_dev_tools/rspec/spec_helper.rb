@@ -10,6 +10,7 @@ SimpleCov.start do
 end
 
 require 'rspec/rails'
+require 'rspec/retry'
 require 'ffaker'
 require 'pry'
 
@@ -97,4 +98,9 @@ RSpec.configure do |config|
 
   config.fail_fast = ENV['FAIL_FAST'] || false
   config.order = 'random'
+
+  # show retry status in spec process
+  config.verbose_retry = true
+  # show exception that triggers a retry if verbose_retry is set to true
+  config.display_try_failure_messages = true
 end
