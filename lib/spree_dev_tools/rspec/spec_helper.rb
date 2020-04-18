@@ -27,6 +27,8 @@ require 'spree/testing_support/controller_requests'
 require 'spree/testing_support/flash'
 require 'spree/testing_support/url_helpers'
 require 'spree/testing_support/order_walkthrough'
+require 'spree/testing_support/auth_helpers'
+require 'spree/testing_support/checkout_helpers'
 require 'spree/testing_support/caching'
 
 # API v2 helpers
@@ -59,6 +61,9 @@ RSpec.configure do |config|
   config.include Spree::TestingSupport::Preferences
   config.include Spree::TestingSupport::Flash
 
+  config.include Spree::TestingSupport::AuthHelpers, type: :feature
+  config.include Spree::TestingSupport::CheckoutHelpers, type: :feature
+
   config.before :each do
     Rails.cache.clear
     reset_spree_preferences do |config|
@@ -72,7 +77,7 @@ RSpec.configure do |config|
       @request.env['devise.mapping'] = Devise.mappings[:spree_user]
     end
 
-    config.include Devise::TestHelpers, type: :controller
+    config.include Devise::Test::ControllerHelpers, type: :controller
 
     config.include Warden::Test::Helpers
     config.before :suite do
