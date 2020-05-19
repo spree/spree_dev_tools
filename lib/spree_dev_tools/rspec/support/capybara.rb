@@ -5,7 +5,7 @@ require 'capybara/rails'
 require 'selenium-webdriver'
 require 'capybara-select-2'
 
-RSpec.configure do
+RSpec.configure do |config|
   Capybara.register_driver :chrome do |app|
     Selenium::WebDriver.logger.level = :error
 
