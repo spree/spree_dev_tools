@@ -3,6 +3,7 @@ require 'capybara-screenshot'
 require 'capybara-screenshot/rspec'
 require 'capybara/rails'
 require 'selenium-webdriver'
+require 'capybara-select-2'
 
 RSpec.configure do
   Capybara.register_driver :chrome do |app|
@@ -20,4 +21,6 @@ RSpec.configure do
   Capybara::Screenshot.register_driver(:chrome) do |driver, path|
     driver.browser.save_screenshot(path)
   end
+
+  config.include CapybaraSelect2
 end
