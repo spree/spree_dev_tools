@@ -23,4 +23,5 @@ RSpec.configure do |config|
   end
 
   config.include CapybaraSelect2
+  config.include CapybaraSelect2::Helpers
 end
