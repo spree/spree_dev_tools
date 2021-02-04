@@ -1,17 +1,9 @@
 module SpreeDevTools
-  module_function
+  VERSION = '0.1.3'
 
   # Returns the version of the currently loaded SpreeDevTools as a
   # <tt>Gem::Version</tt>.
-  def version
-    Gem::Version.new VERSION::STRING
-  end
-
-  module VERSION
-    MAJOR = 0
-    MINOR = 1
-    TINY  = 3
-
-    STRING = [MAJOR, MINOR, TINY].compact.join('.')
+  def gem_version
+    Gem::Version.new(VERSION)
   end
 end

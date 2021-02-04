@@ -7,7 +7,7 @@ require 'spree_dev_tools/version'
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_dev_tools'
-  s.version     = SpreeDevTools.version
+  s.version     = SpreeDevTools::VERSION
   s.summary     = 'Spree Dev Tools'
   s.description = 'Spree Developer Tools'
   s.required_ruby_version = '>= 2.3.0'
