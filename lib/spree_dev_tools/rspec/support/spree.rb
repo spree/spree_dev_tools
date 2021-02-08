@@ -12,12 +12,16 @@ require 'spree/testing_support/checkout_helpers'
 require 'spree/testing_support/caching'
 
 # API helpers
-require 'spree/api/testing_support/helpers'
+if defined?(Spree::Api)
+  require 'spree/api/testing_support/helpers'
+end
 
 # API v2 helpers
-require 'jsonapi/rspec'
-require 'spree/api/testing_support/v2/base'
-require 'spree/api/testing_support/v2/current_order'
+if defined?(Spree::Api) && Spree.version.to_f >= 3.7
+  require 'jsonapi/rspec'
+  require 'spree/api/testing_support/v2/base'
+  require 'spree/api/testing_support/v2/current_order'
+end
 
 RSpec.configure do |config|
   # Infer an example group's spec type from the file location.
@@ -43,8 +47,12 @@ RSpec.configure do |config|
   config.include Spree::TestingSupport::AuthHelpers, type: :feature
   config.include Spree::TestingSupport::CheckoutHelpers, type: :feature
 
-  config.include Spree::Api::TestingSupport::Helpers # needed for API v1
-  config.include JSONAPI::RSpec, type: :request # required for API v2 request specs
+  if defined?(Spree::Api)
+    config.include Spree::Api::TestingSupport::Helpers # needed for API v1
+  end
+  if Spree.version.to_f >= 3.7
+    config.include JSONAPI::RSpec, type: :request # required for API v2 request specs
+  end
 
   config.before :each do
     Rails.cache.clear
