@@ -43,6 +43,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'sass-rails'
   s.add_dependency 'selenium-webdriver'
   s.add_dependency 'simplecov'
+  s.add_dependency 'spree_core'
   s.add_dependency 'sqlite3'
   s.add_dependency 'timecop'
   s.add_dependency 'webdrivers', '~> 4.3'
