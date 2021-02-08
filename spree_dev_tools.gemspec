@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'ffaker'
   s.add_dependency 'gem-release'
   s.add_dependency 'github_changelog_generator'
+  s.add_dependency 'jsonapi-rspec'
   s.add_dependency 'mysql2'
   s.add_dependency 'pg'
   s.add_dependency 'pry'
