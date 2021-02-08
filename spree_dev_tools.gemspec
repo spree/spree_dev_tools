@@ -40,6 +40,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails-controller-testing'
   s.add_dependency 'rspec-rails', '~> 4.0'
   s.add_dependency 'rspec-retry'
+  s.add_dependency 'rubocop'
+  s.add_dependency 'rubocop-rails'
   s.add_dependency 'sass-rails'
   s.add_dependency 'selenium-webdriver'
   s.add_dependency 'simplecov'
