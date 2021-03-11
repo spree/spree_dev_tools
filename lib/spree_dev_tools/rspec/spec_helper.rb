@@ -1,5 +1,6 @@
 # Run Coverage report
 require 'rspec/rails'
+require 'rspec/active_model/mocks'
 require 'rspec/retry'
 require 'ffaker'
 require 'pry'
