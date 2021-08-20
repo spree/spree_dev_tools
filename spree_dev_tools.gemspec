@@ -38,6 +38,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'pry'
   s.add_dependency 'puma'
   s.add_dependency 'rails-controller-testing'
+  s.add_dependency 'redis'
   s.add_dependency 'rspec-activemodel-mocks'
   s.add_dependency 'rspec-rails', '~> 4.0'
   s.add_dependency 'rspec-retry'
