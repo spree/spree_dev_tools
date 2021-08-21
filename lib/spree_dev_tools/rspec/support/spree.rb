@@ -58,9 +58,17 @@ RSpec.configure do |config|
 
   config.before :each do
     Rails.cache.clear
-    reset_spree_preferences do |config|
-      # config.my_custom_preference = 10
+
+    country = create(:country, name: 'United States of America', iso_name: 'UNITED STATES', iso: 'US', states_required: true)
+
+    reset_spree_preferences do |spree_config|
+      spree_config.default_country_id = country.id
     end
-    create(:store)
+
+    if Spree.version.to_f >= 4.2
+      create(:store, default: true, default_country: country)
+    else
+      create(:store, default: true)
+    end
   end
 end
