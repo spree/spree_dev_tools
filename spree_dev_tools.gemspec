@@ -26,7 +26,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'capybara'
   s.add_dependency 'capybara-screenshot'
   s.add_dependency 'capybara-select-2'
-  s.add_dependency 'coffee-rails'
   s.add_dependency 'database_cleaner'
   s.add_dependency 'factory_bot', '~> 4.7'
   s.add_dependency 'ffaker'
