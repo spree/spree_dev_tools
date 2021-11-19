@@ -50,4 +50,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'sqlite3'
   s.add_dependency 'timecop'
   s.add_dependency 'webdrivers', '~> 4.3'
+  s.add_dependency 'rspec_junit_formatter', '~> 0.4.1'
 end
