@@ -11,12 +11,6 @@ require 'spree/testing_support/auth_helpers'
 require 'spree/testing_support/checkout_helpers'
 require 'spree/testing_support/caching'
 
-# API helpers
-if defined?(Spree::Api)
-  require 'spree/api/testing_support/helpers'
-  require 'spree/api/testing_support/setup'
-end
-
 # API v2 helpers
 if defined?(Spree::Api) && Spree.version.to_f >= 3.7
   require 'jsonapi/rspec'
@@ -48,10 +42,6 @@ RSpec.configure do |config|
   config.include Spree::TestingSupport::AuthHelpers, type: :feature
   config.include Spree::TestingSupport::CheckoutHelpers, type: :feature
 
-  if defined?(Spree::Api)
-    config.include Spree::Api::TestingSupport::Helpers # needed for API v1
-    config.extend Spree::Api::TestingSupport::Setup, type: :request
-  end
   if Spree.version.to_f >= 3.7
     config.include JSONAPI::RSpec, type: :request # required for API v2 request specs
   end
