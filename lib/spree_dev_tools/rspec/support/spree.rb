@@ -51,9 +51,7 @@ RSpec.configure do |config|
 
     country = create(:country, name: 'United States of America', iso_name: 'UNITED STATES', iso: 'US', states_required: true)
 
-    reset_spree_preferences do |spree_config|
-      spree_config.default_country_id = country.id
-    end
+    reset_spree_preferences
 
     if Spree.version.to_f >= 4.2
       create(:store, default: true, default_country: country)
