@@ -20,6 +20,10 @@ And run...
 bundle install
 ```
 
+## Configuring
+
+If you want to disable Simplecov set the `SPREE_DEV_TOOLS_DISABLE_SIMPLECOV` ENV variable to any value.
+
 ## Contributing
 
 If you'd like to contribute, please take a look at the
