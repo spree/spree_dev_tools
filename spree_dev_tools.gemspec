@@ -37,7 +37,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails-controller-testing'
   s.add_dependency 'redis'
   s.add_dependency 'rspec-activemodel-mocks'
-  s.add_dependency 'rspec-rails', '~> 4.0'
+  s.add_dependency 'rspec_junit_formatter'
+  s.add_dependency 'rspec-rails'
   s.add_dependency 'rspec-retry'
   s.add_dependency 'rubocop'
   s.add_dependency 'rubocop-rails'
@@ -46,6 +47,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'simplecov'
   s.add_dependency 'spree_core'
   s.add_dependency 'timecop'
-  s.add_dependency 'webdrivers', '~> 4.3'
-  s.add_dependency 'rspec_junit_formatter', '~> 0.4'
+  s.add_dependency 'webdrivers'
 end
