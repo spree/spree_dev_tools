@@ -4,6 +4,7 @@ require 'rspec/active_model/mocks'
 require 'rspec/retry'
 require 'ffaker'
 require 'pry'
+require 'webdrivers/chromedriver'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
