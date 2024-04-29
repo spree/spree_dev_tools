@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'capybara-screenshot'
   s.add_dependency 'capybara-select-2'
   s.add_dependency 'database_cleaner'
-  s.add_dependency 'factory_bot', '~> 4.7'
+  s.add_dependency 'factory_bot', '>= 4.7', '< 7.0'
   s.add_dependency 'ffaker'
   s.add_dependency 'gem-release'
   s.add_dependency 'github_changelog_generator'
