@@ -47,6 +47,7 @@ RSpec.configure do |config|
   end
 
   config.before :each do
+    I18n.locale = :en
     Rails.cache.clear
 
     country = create(:country, name: 'United States of America', iso_name: 'UNITED STATES', iso: 'US', states_required: true)
