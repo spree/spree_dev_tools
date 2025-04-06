@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'appraisal'
   s.add_dependency 'awesome_print'
+  s.add_dependency 'brakeman'
   s.add_dependency 'capybara'
   s.add_dependency 'capybara-screenshot'
   s.add_dependency 'capybara-select-2'
