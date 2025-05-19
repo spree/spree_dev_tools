@@ -14,6 +14,7 @@ require 'spree/testing_support/caching'
 # API v2 helpers
 if defined?(Spree::Api) && Spree.version.to_f >= 3.7
   require 'jsonapi/rspec'
+  require 'spree/api/testing_support/v2/base'
   require 'spree/api/testing_support/matchers/webhooks'
   require 'spree/api/testing_support/factories'
   require 'spree/api/testing_support/v2/current_order'
