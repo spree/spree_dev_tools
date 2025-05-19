@@ -6,6 +6,8 @@ require 'ffaker'
 require 'pry'
 require 'webdrivers/chromedriver'
 
+require 'action_text/system_test_helper'
+
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].sort.each { |f| require f }
@@ -41,4 +43,7 @@ RSpec.configure do |config|
   config.around :each, :js do |ex|
     ex.run_with_retry retry: 3
   end
+
+  config.include ActionText::SystemTestHelper, type: :feature
+  config.include ActiveJob::TestHelper
 end

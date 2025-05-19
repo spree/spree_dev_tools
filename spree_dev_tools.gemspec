@@ -36,8 +36,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'pry'
   s.add_dependency 'puma'
   s.add_dependency 'rails-controller-testing'
-  s.add_dependency 'redis'
-  s.add_dependency 'rspec-activejob'
   s.add_dependency 'rspec-activemodel-mocks'
   s.add_dependency 'rspec_junit_formatter'
   s.add_dependency 'rspec-rails'
@@ -47,7 +45,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'sass-rails'
   s.add_dependency 'selenium-webdriver'
   s.add_dependency 'simplecov'
-  s.add_dependency 'spree_core'
+  s.add_dependency 'spree'
   s.add_dependency 'timecop'
   s.add_dependency 'webdrivers'
 end
