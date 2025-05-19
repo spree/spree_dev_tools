@@ -14,8 +14,12 @@ require 'spree/testing_support/caching'
 # API v2 helpers
 if defined?(Spree::Api) && Spree.version.to_f >= 3.7
   require 'jsonapi/rspec'
-  require 'spree/api/testing_support/v2/base'
+  require 'spree/api/testing_support/matchers/webhooks'
+  require 'spree/api/testing_support/factories'
+  require 'jsonapi/rspec'
   require 'spree/api/testing_support/v2/current_order'
+  require 'spree/api/testing_support/v2/platform_contexts'
+  require 'spree/api/testing_support/v2/serializers_params'
 end
 
 RSpec.configure do |config|
