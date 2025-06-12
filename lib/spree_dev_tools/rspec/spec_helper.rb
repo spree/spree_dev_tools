@@ -5,6 +5,8 @@ require 'rspec/retry'
 require 'ffaker'
 require 'pry'
 require 'webdrivers/chromedriver'
+require 'webmock/rspec'
+require 'vcr'
 
 require 'action_text/system_test_helper'
 
