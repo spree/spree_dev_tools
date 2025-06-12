@@ -49,7 +49,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'simplecov'
   s.add_dependency 'spree'
   s.add_dependency 'timecop'
-  s.add_dependency 'vcr'
   s.add_dependency 'webdrivers'
-  s.add_dependency 'webmock'
 end
