@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.version     = SpreeDevTools::VERSION
   s.summary     = 'Spree Dev Tools'
   s.description = 'Spree Developer Tools'
-  s.required_ruby_version = '>= 2.3.0'
+  s.required_ruby_version = '>= 2.4.0'
 
   s.author    = 'Spark Solutions'
   s.email     = 'we@sparksolutions.co'
