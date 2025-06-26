@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.version     = SpreeDevTools::VERSION
   s.summary     = 'Spree Dev Tools'
   s.description = 'Spree Developer Tools'
-  s.required_ruby_version = '>= 2.3.0'
+  s.required_ruby_version = '>= 2.4.0'
 
   s.author    = 'Spark Solutions'
   s.email     = 'we@sparksolutions.co'
@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'capybara-select-2'
   s.add_dependency 'database_cleaner'
   s.add_dependency 'dotenv'
-  s.add_dependency 'factory_bot', '~> 4.7'
+  s.add_dependency 'factory_bot', '~> 6.2'
   s.add_dependency 'ffaker'
   s.add_dependency 'gem-release'
   s.add_dependency 'github_changelog_generator'
