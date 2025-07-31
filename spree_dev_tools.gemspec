@@ -47,7 +47,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'sass-rails'
   s.add_dependency 'selenium-webdriver', '>= 4.10'
   s.add_dependency 'simplecov'
-  s.add_dependency 'spree'
+  s.add_dependency 'spree', '>= 5.0'
   s.add_dependency 'timecop'
   s.add_dependency 'webdrivers'
 end
