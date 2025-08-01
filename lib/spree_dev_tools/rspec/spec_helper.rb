@@ -88,6 +88,7 @@ RSpec.configure do |config|
   config.include ActionText::SystemTestHelper, type: :feature
 
   config.include JSONAPI::RSpec, type: :request # required for API v2 request specs
+  config.include Spree::TestingSupport::ApiHelpers, type: :request
 
   config.order = :random
   Kernel.srand config.seed
