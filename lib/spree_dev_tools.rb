@@ -1,2 +1,5 @@
+require 'spree_core'
+require 'spree_api'
+require 'spree_dev_tools/engine'
 require 'spree_dev_tools/version'
 require 'spree_dev_tools/generators/install/install_generator'

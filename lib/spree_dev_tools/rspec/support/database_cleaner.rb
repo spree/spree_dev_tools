@@ -1,3 +1,4 @@
+require 'rspec/rails'
 require 'database_cleaner/active_record'
 
 RSpec.configure do |config|

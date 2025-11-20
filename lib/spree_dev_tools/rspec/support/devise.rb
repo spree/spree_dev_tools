@@ -1,3 +1,5 @@
+require 'rspec/rails'
+
 if defined?(Warden)
   include Warden::Test::Helpers
   Warden.test_mode!

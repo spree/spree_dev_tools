@@ -1,4 +1,5 @@
 require 'webdrivers/chromedriver'
+require 'capybara'
 
 RSpec.configure do |config|
   config.before(:each) do

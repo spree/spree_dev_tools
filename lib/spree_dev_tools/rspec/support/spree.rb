@@ -1,3 +1,4 @@
+require 'rspec/rails'
 require 'ffaker'
 
 require 'spree/testing_support/authorization_helpers'

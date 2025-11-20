@@ -1,4 +1,5 @@
 require 'factory_bot'
+require 'rspec/rails'
 
 FactoryBot.find_definitions
 
