@@ -1,23 +1,25 @@
 # Spree Developer Tools
 
-This gem includes:
-
-* all dependencies to run Spree applications in development and test environments
-* configuration for testing environment
-* rspec and capybara helpers
+This is a Spree development tools gem. It helps you work with Spree applications, both extensions and standard Rails applications.
 
 ## Installation
 
-Add it to your `Gemfile`
+Add it to your `Gemfile`:
 
 ```ruby
-gem 'spree_dev_tools'
+gem 'spree_dev_tools', group: [:development, :test]
 ```
 
-And run...
+Run:
 
 ```bash
 bundle install
+```
+
+And finally run the generator:
+
+```bash
+bundle exec rails g spree_dev_tools:install
 ```
 
 ## Configuring
