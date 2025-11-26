@@ -1,5 +1,5 @@
 module SpreeDevTools
-  VERSION = '0.4.0'
+  VERSION = '0.4.1'
 
   # Returns the version of the currently loaded SpreeDevTools as a
   # <tt>Gem::Version</tt>.
