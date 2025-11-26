@@ -16,7 +16,7 @@ module SpreeDevTools
     def run_rspec_install
       return if File.exist?(Rails.root.join('spec/spec_helper.rb'))
 
-      rails_command 'rspec:install'
+      rails_command 'generate rspec:install'
     end
 
     def install_spree_dev_tools
