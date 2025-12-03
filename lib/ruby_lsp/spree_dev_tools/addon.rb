@@ -5,6 +5,8 @@ require "ruby_lsp/addon"
 module RubyLsp
   module SpreeDevTools
     class Addon < ::RubyLsp::Addon
+      VERSION = "0.1.0"
+
       SPREE_GEMS = %w[
         spree_core
         spree_api
@@ -29,7 +31,7 @@ module RubyLsp
       end
 
       def version
-        ::SpreeDevTools::VERSION
+        VERSION
       end
 
       private
