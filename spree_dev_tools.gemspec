@@ -41,6 +41,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rspec_junit_formatter'
   s.add_dependency 'rspec-rails'
   s.add_dependency 'rspec-retry'
+  s.add_dependency 'ruby-lsp', '>= 0.23.0'
   s.add_dependency 'selenium-webdriver', '>= 4.10'
   s.add_dependency 'simplecov'
   s.add_dependency 'spree', '>= 5.0'
