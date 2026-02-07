@@ -12,13 +12,6 @@ require 'spree/testing_support/order_walkthrough'
 require 'spree/testing_support/capybara_config'
 require 'spree/testing_support/rspec_retry_config'
 require 'spree/testing_support/image_helpers'
-
-require 'jsonapi/rspec'
-require 'spree/api/testing_support/v2/base'
-require 'spree/api/testing_support/factories'
-require 'spree/api/testing_support/v2/current_order'
-require 'spree/api/testing_support/v2/platform_contexts'
-require 'spree/api/testing_support/v2/serializers_params'
 require 'spree/core/controller_helpers/strong_parameters'
 
 module Spree
@@ -42,12 +35,9 @@ RSpec.configure do |config|
   config.include Spree::TestingSupport::ControllerRequests, type: :controller
   config.include Spree::TestingSupport::ImageHelpers
   config.include Spree::Core::ControllerHelpers::StrongParameters, type: :controller
-
-  config.include JSONAPI::RSpec, type: :request # required for API v2 request specs
   config.include Spree::TestingSupport::ApiHelpers, type: :request
 
   config.before(:each) do
-    Spree::Webhooks.disabled = true if defined?(Spree::Webhooks) && Spree::Webhooks.respond_to?(:disabled=)
     Spree::LegacyWebhooks.disabled = true if defined?(Spree::LegacyWebhooks) && Spree::LegacyWebhooks.respond_to?(:disabled=)
     reset_spree_preferences
   end

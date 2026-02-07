@@ -1,5 +1,6 @@
-# encoding: UTF-8
-lib = File.expand_path('../lib/', __FILE__)
+# frozen_string_literal: true
+
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift lib unless $LOAD_PATH.include?(lib)
 
 require 'spree_dev_tools/version'
@@ -9,15 +10,15 @@ Gem::Specification.new do |s|
   s.name        = 'spree_dev_tools'
   s.version     = SpreeDevTools::VERSION
   s.summary     = 'Spree Dev Tools'
-  s.description = 'Spree Developer Tools'
-  s.required_ruby_version = '>= 2.4.0'
+  s.description = 'Spree Developer Tools to help you develop and test your Spree applications and extensions.'
+  s.required_ruby_version = '>= 3.2.0'
 
-  s.author    = 'Spark Solutions'
+  s.author    = 'Vendo Connect Inc., Vendo Sp. z o.o.'
   s.email     = 'we@sparksolutions.co'
   s.homepage  = 'https://github.com/spree/spree_dev_tools'
-  s.license = 'BSD-3-Clause'
+  s.license   = 'MIT'
 
-  s.files       = `git ls-files`.split("\n").reject { |f| f.match(/^spec/) && !f.match(/^spec\/fixtures/) }
+  s.files = `git ls-files`.split("\n").reject { |f| f.match(/^spec/) && !f.match(%r{^spec/fixtures}) }
   s.require_path = 'lib'
   s.requirements << 'none'
 
@@ -33,7 +34,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'gem-release'
   s.add_dependency 'github_changelog_generator'
   s.add_dependency 'i18n-tasks'
-  s.add_dependency 'jsonapi-rspec'
+  s.add_dependency 'parallel_tests'
   s.add_dependency 'pry'
   s.add_dependency 'puma'
   s.add_dependency 'rails-controller-testing'
@@ -44,7 +45,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'ruby-lsp', '>= 0.23.0'
   s.add_dependency 'selenium-webdriver', '>= 4.10'
   s.add_dependency 'simplecov'
-  s.add_dependency 'spree', '>= 5.0'
+  s.add_dependency 'spree', '>= 5.4.0.alpha'
   s.add_dependency 'timecop'
   s.add_dependency 'webdrivers'
 end
