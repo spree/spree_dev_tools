@@ -14,6 +14,8 @@ require 'spree/testing_support/rspec_retry_config'
 require 'spree/testing_support/image_helpers'
 require 'spree/core/controller_helpers/strong_parameters'
 
+require 'spree/api/testing_support/v3/base'
+
 module Spree
   module TestingSupport
     module ApiHelpers
