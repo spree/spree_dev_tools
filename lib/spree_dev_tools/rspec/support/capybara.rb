@@ -1,3 +1,4 @@
+require 'selenium-webdriver'
 require 'capybara'
 
 RSpec.configure do |config|
