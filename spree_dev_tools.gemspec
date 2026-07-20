@@ -47,5 +47,4 @@ Gem::Specification.new do |s|
   s.add_dependency 'simplecov'
   s.add_dependency 'spree', '>= 5.4.0.alpha'
   s.add_dependency 'timecop'
-  s.add_dependency 'webdrivers'
 end

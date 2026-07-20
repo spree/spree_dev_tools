@@ -1,4 +1,3 @@
-require 'webdrivers/chromedriver'
 require 'capybara'
 
 RSpec.configure do |config|
