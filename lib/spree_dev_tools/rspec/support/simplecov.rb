@@ -6,7 +6,6 @@ unless ENV['SPREE_DEV_TOOLS_DISABLE_SIMPLECOV'].present?
     add_group 'Helpers', 'app/helpers'
     add_group 'Mailers', 'app/mailers'
     add_group 'Models', 'app/models'
-    add_group 'Views', 'app/views'
     add_group 'Libraries', 'lib/spree'
   end
 end

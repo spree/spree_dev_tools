@@ -24,8 +24,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'awesome_print'
   s.add_dependency 'brakeman'
-  s.add_dependency 'capybara'
-  s.add_dependency 'capybara-screenshot'
   s.add_dependency 'database_cleaner'
   s.add_dependency 'dotenv'
   s.add_dependency 'factory_bot'
@@ -43,7 +41,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'rspec-rails'
   s.add_dependency 'rspec-retry'
   s.add_dependency 'ruby-lsp', '>= 0.23.0'
-  s.add_dependency 'selenium-webdriver', '>= 4.14'
   s.add_dependency 'simplecov'
   s.add_dependency 'spree', '>= 5.4.0.alpha'
   s.add_dependency 'timecop'

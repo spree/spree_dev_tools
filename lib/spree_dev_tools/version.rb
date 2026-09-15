@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module SpreeDevTools
-  VERSION = '0.6.3'
+  VERSION = '1.0.0.beta1'
 
   # Returns the version of the currently loaded SpreeDevTools as a
   # <tt>Gem::Version</tt>.

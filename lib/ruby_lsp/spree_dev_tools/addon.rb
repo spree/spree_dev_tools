@@ -10,8 +10,6 @@ module RubyLsp
       SPREE_GEMS = %w[
         spree_core
         spree_api
-        spree_admin
-        spree_storefront
         spree_emails
       ].freeze
 

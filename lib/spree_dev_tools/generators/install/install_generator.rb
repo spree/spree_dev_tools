@@ -28,11 +28,8 @@ module SpreeDevTools
     def inject_rspec_support_files
       empty_directory 'spec/support'
 
-      template 'capybara.rb', 'spec/support/capybara.rb'
-      template 'action_text.rb', 'spec/support/action_text.rb'
       template 'active_job.rb', 'spec/support/active_job.rb'
       template 'database_cleaner.rb', 'spec/support/database_cleaner.rb'
-      template 'devise.rb', 'spec/support/devise.rb'
       template 'factory_bot.rb', 'spec/support/factory_bot.rb'
       template 'spree.rb', 'spec/support/spree.rb'
     end
