@@ -31,6 +31,7 @@ RSpec.configure do |config|
   config.include Spree::TestingSupport::UrlHelpers
   config.include Spree::TestingSupport::ImageHelpers
   config.include Spree::TestingSupport::ApiHelpers, type: :request
+  config.include Spree::TestingSupport::ApiHelpers, type: :controller
 
   config.before(:each) do
     reset_spree_preferences
