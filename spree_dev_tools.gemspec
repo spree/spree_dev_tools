@@ -42,6 +42,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'rspec-retry'
   s.add_dependency 'ruby-lsp', '>= 0.23.0'
   s.add_dependency 'simplecov'
-  s.add_dependency 'spree', '>= 5.4.0.alpha'
+  s.add_dependency 'spree', '>= 6.0.0.beta1'
   s.add_dependency 'timecop'
 end
