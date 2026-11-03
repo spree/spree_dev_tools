@@ -172,6 +172,9 @@ module SpreeDevTools
         lines << "        let(:#{segment}) { skip('TODO: the record this operation acts on') }"
       end
       lines << "        let(:body) { skip('TODO: a valid request body') }" if body
+      # Nothing above defers the request, so skip it outright until the
+      # example is written: run_test! would otherwise send it unfinished.
+      lines << "        before { skip('TODO: the records this operation is tested against') }" if segments.empty? && !body
       lines << ''
       lines << '        run_test!'
       lines << '      end'
