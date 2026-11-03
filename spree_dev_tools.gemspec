@@ -38,6 +38,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails-controller-testing'
   s.add_dependency 'rspec-activemodel-mocks'
   s.add_dependency 'rspec_junit_formatter'
+  s.add_dependency 'rswag-specs'
   s.add_dependency 'rspec-rails'
   s.add_dependency 'rspec-retry'
   s.add_dependency 'ruby-lsp', '>= 0.23.0'
