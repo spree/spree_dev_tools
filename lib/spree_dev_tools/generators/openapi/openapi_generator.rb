@@ -111,15 +111,17 @@ module SpreeDevTools
       paths = Spree::Api::AdminDocument.document['paths'] || {}
       root = File.expand_path(engine.root.to_s)
 
-      routes = Spree::Api::AgentOperations.admin_routes.select do |route|
+      operations = Spree::Api::AgentOperations
+
+      # What the contract spec requires: the actions that become tools. CRUD
+      # reaches agents through the generic tools and needs no spec here.
+      operations.admin_routes.select do |route|
+        next false unless operations::WRITE_VERBS.include?(route[:verb]) && !operations::CRUD_ACTIONS.include?(route[:action])
+
         controller = route[:controller]
         location = controller && Object.const_source_location(controller.name)&.first
         location&.start_with?(root) && paths.dig(route[:path], route[:verb]).nil?
       end.uniq { |route| [route[:verb], route[:path]] }
-
-      # Rails routes an update as both PATCH and PUT; one operation documents it.
-      patched = routes.select { |route| route[:verb] == 'patch' }.map { |route| route[:path] }
-      routes.reject { |route| route[:verb] == 'put' && patched.include?(route[:path]) }
     end
 
     def spec_for(controller, routes)
