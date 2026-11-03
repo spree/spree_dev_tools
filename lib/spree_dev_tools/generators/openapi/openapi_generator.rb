@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
 require 'rails/generators'
+require 'spree_dev_tools/openapi'
 
 module SpreeDevTools
-  # Sets an extension up to document its Admin API endpoints, which makes
-  # each documented action an agent tool:
+  # Sets an extension, or a Spree application, up to document its Admin API
+  # endpoints, which makes each documented action an agent tool. In a Spree
+  # project:
   #
-  #   bin/rails g spree_dev_tools:openapi
+  #   spree generate spree_dev_tools:openapi
   #
   # Writes spec/swagger_helper.rb and the agent-tool contract spec, then a
   # skeleton rswag spec for every admin action the extension's controllers
@@ -37,11 +39,11 @@ module SpreeDevTools
       create_file 'spec/swagger_helper.rb', <<~RUBY, skip: true
         # frozen_string_literal: true
 
-        # Integration specs that document the Admin API endpoints this extension
-        # adds. `bundle exec rake spree:openapi:generate` writes them into
-        # openapi/admin.yaml, which Spree reads to build an agent tool for each
-        # documented action.
-        require 'spec_helper'
+        # Integration specs that document the Admin API endpoints added here.
+        # `spree task openapi:generate` (in an extension, `bundle exec rake
+        # spree:openapi:generate`) writes them into openapi/admin.yaml, which
+        # Spree reads to build an agent tool for each documented action.
+        require '#{spec_helper}'
         require 'spree_dev_tools/rspec/openapi'
       RUBY
     end
@@ -50,13 +52,13 @@ module SpreeDevTools
       create_file 'spec/agent_tools_spec.rb', <<~RUBY, skip: true
         # frozen_string_literal: true
 
-        require 'spec_helper'
+        require '#{spec_helper}'
         require 'spree/api/testing_support/agent_tools_contract'
 
         # Fails when an admin action has no documented operation, an opt-out has
         # no reason, or two actions would derive the same agent tool name.
         RSpec.describe 'agent tools' do
-          it_behaves_like 'an engine whose admin writes are agent tools', #{engine.name}
+          it_behaves_like 'an engine whose admin writes are agent tools', #{reference}
         end
       RUBY
     end
@@ -85,11 +87,20 @@ module SpreeDevTools
 
     private
 
+    def reference
+      options[:engine] || SpreeDevTools::Openapi.reference
+    end
+
+    # An application boots Rails from rails_helper; an extension's
+    # spec_helper loads its dummy app.
+    def spec_helper
+      engine.is_a?(Rails::Application) ? 'rails_helper' : 'spec_helper'
+    end
+
     def engine
       @engine ||= if options[:engine]
                     options[:engine].constantize
                   else
-                    require 'spree_dev_tools/openapi'
                     SpreeDevTools::Openapi.engine
                   end
     end

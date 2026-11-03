@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-# Sets an extension's rswag specs up to generate the `openapi/admin.yaml` its
-# gem ships; see SpreeDevTools::Openapi. In the extension's
-# `spec/swagger_helper.rb`:
+# Sets an extension's or an application's rswag specs up to generate the
+# `openapi/admin.yaml` it ships; see SpreeDevTools::Openapi. In
+# `spec/swagger_helper.rb` (an application requires rails_helper instead):
 #
 #   require 'spec_helper'
 #   require 'spree_dev_tools/rspec/openapi'
